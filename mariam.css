@@ -1,0 +1,203 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  background: linear-gradient(
+    135deg,
+    #21162e,
+    #58304f,
+    #a45d83
+  );
+  color: #fff0f7;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  padding: 35px 20px;
+  animation: appear 1.5s ease;
+}
+
+.heart {
+  font-size: 55px;
+  color: #ffb5d5;
+  animation: heartbeat 2s infinite;
+}
+
+.small-title {
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: #e9b9d5;
+  margin-top: 25px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(55px, 13vw, 85px);
+  margin: 15px 0;
+  background: linear-gradient(
+    90deg,
+    #fff0f7,
+    #ffb6d5,
+    #fff0f7
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: glow 3s infinite alternate;
+}
+
+.subtitle {
+  max-width: 340px;
+  margin: 0 auto;
+  color: #f2d6e6;
+  font-size: 13px;
+  line-height: 2;
+  font-weight: 300;
+}
+
+.flower {
+  font-size: 48px;
+  color: #ffc3df;
+  margin: 25px;
+  animation: rotate 10s linear infinite;
+}
+
+button {
+  border: 1px solid #ffd3e6;
+  border-radius: 40px;
+  padding: 14px 30px;
+  color: #683c58;
+  background: #ffe6f1;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: inherit;
+}
+
+button:hover {
+  transform: scale(1.07);
+  background: white;
+  box-shadow: 0 0 25px #ffc5e4;
+}
+
+.letter {
+  margin-top: 30px;
+  padding: 25px 20px;
+  border: 1px solid #eebbd7;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(10px);
+  animation: appear 1s ease;
+}
+
+.letter h2 {
+  font-family: 'Playfair Display', serif;
+  color: #ffd3e8;
+  font-size: 24px;
+}
+
+.letter p {
+  font-size: 13px;
+  line-height: 2;
+  color: #fff0f7;
+}
+
+.signature {
+  margin-top: 20px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #ffc4df;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer {
+  margin-top: 35px;
+  font-size: 10px;
+  color: #d9afca;
+  letter-spacing: 1px;
+}
+
+.sparkle {
+  position: fixed;
+  pointer-events: none;
+  animation: floatUp 2s ease-out forwards;
+  z-index: 10;
+}
+
+@keyframes heartbeat {
+  50% { transform: scale(1.2); }
+}
+
+@keyframes glow {
+  to { filter: drop-shadow(0 0 18px #ffb5d5); }
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUp {
+  to {
+    opacity: 0;
+    transform: translateY(-150px) rotate(40deg);
+  }
+}
+
+/* Continuous floating hearts */
+
+.floating-heart {
+  position: fixed;
+  bottom: -40px;
+  z-index: 1;
+  pointer-events: none;
+  color: #ffc0dc;
+  animation: continuousFloat linear forwards;
+  text-shadow: 0 0 12px #ffafd5;
+}
+
+@keyframes continuousFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.8;
+  }
+
+  85% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-115vh) rotate(360deg);
+    opacity: 0;
+  }
+}
