@@ -28,14 +28,13 @@ button.addEventListener("click", function() {
 
 const button = document.getElementById("surpriseBtn");
 const letter = document.getElementById("letter");
+const music = document.getElementById("backgroundMusic");
 
-// Create floating hearts
 function createHeart() {
     const heart = document.createElement("span");
 
     heart.className = "floating-heart";
     heart.textContent = Math.random() > 0.5 ? "♡" : "♥";
-
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = (15 + Math.random() * 25) + "px";
     heart.style.animationDuration = (7 + Math.random() * 6) + "s";
@@ -47,18 +46,25 @@ function createHeart() {
     }, 13000);
 }
 
-// Keep creating hearts continuously
+// قلوب بتطلع باستمرار
 setInterval(createHeart, 650);
 
-// Open birthday surprise
+// عند الضغط على زر المفاجأة
 button.addEventListener("click", function() {
+
     letter.classList.remove("hidden");
 
     button.textContent = "A little more love ♡";
 
-    // Extra hearts when clicked
+    // تشغيل الموسيقى
+    music.volume = 0.35;
+    music.play();
+
+    // ظهور قلوب إضافية
     for (let i = 0; i < 15; i++) {
         setTimeout(createHeart, i * 100);
     }
+
 });
+
 
